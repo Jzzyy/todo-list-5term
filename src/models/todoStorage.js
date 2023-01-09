@@ -35,6 +35,17 @@ class TodoStorage {
             });
         }
 
+        static async readTodo() {
+          return new Promise((resolve, reject) => {
+              const query = "SELECT * FROM todo;";
+              db.query(query, (err,data,a) => {
+                if (err) reject(err);
+                resolve({data});
+              });
+            });
+          }
+          
+
 }
 
 module.exports = TodoStorage;

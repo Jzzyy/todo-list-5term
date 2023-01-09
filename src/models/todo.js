@@ -34,6 +34,16 @@ class Todo {
             return {success: false, msg:err};
         }
     }
+
+    async readTodo() {
+        try {
+            const response = await TodoStorage.readTodo()
+            return response
+        }
+        catch(err) {
+            return {success: false, msg:err};
+        }
+    }
 }
 
 module.exports = Todo;

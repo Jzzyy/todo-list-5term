@@ -4,6 +4,9 @@ const Todo = require("../../models/todo");
 
 const output = {
     getTodo: async(req, res) => {
+        const todo = new Todo()
+        const response = await todo.readTodo();
+        res.send(response)
     },
 }
 
